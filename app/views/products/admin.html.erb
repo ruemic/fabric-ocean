@@ -1,0 +1,24 @@
+<h1>Product Gallery</h1>
+
+<div id="tag_cloud">
+  <% tag_cloud Product.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+
+<div id="products">
+  <%= render @products %>
+</div>
+<div class="clear"></div>
+
+<%= form_for Product.new do |f| %>
+  <%= f.label :image, "Upload paintings:" %>
+  <%= f.file_field :image, multiple:true, name: "product[image]" %>
+<% end %>
+
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+  {%=o.name%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
