@@ -8,11 +8,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if update_favorites && @user.save
       redirect_to root_url, :notice => "Signed up!"
     else
       render :new
     end
+  end
+
+  def update
+   @user = User.find(params[:id])
+   update_favorites && @user.update_attributes(params[:user])
   end
 
   protected

@@ -4,7 +4,6 @@ module UsersHelper
     # confirm that the user variable is of class User
     raise ArgumentError unless user.class == User
 
-    @test = user.to_s
     # Take the type from the options hash and create multiple forms of it
     type = opts[:type] ? opts[:type] : :product
     type = type.to_sym
