@@ -1,21 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div id="show">
+  <p id="notice"><%= notice %></p>
 
-<h1>
-  <b>Name:</b>
-  <%= @product.name %>
-</h1>
+  <h1>
+    <b>Name:</b>
+    <%= @product.name %>
+  </h1>
 
-<p>
-  Tags: <%= raw @product.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-</p>
+  <p>
+    Tags: <%= raw @product.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+  </p>
 
-<p class="full-size-show">
-  <%= image_tag @product.image_url , class: "full-size-img" %>
-</p>
+  <p class="full-size-show">
+    <%= image_tag @product.image_url , class: "full-size-img" %>
+  </p>
 
 
 
-<% if user_signed_in? %>
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-<% end %>
-<%= link_to 'Back', products_path %>
+  <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+  <% end %>
+  <%= link_to 'Back', products_path %>
+</div>

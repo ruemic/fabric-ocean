@@ -49,8 +49,7 @@ gem 'carrierwave'
 gem 'rmagick'
 #tagging system
 gem 'acts-as-taggable-on'
-#user authentication
-gem 'devise'
+
 #CSS Authoring Framework
 gem "compass-rails"
 

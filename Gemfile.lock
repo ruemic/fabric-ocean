@@ -32,7 +32,6 @@ GEM
       rails (~> 3.0)
     addressable (2.3.2)
     arel (3.0.2)
-    bcrypt-ruby (3.0.1)
     builder (3.0.3)
     carrierwave (0.6.2)
       activemodel (>= 3.2.0)
@@ -52,11 +51,6 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
-    devise (2.1.2)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (~> 3.1)
-      warden (~> 1.2.1)
     erubis (2.7.0)
     eventmachine (1.0.0)
     excon (0.16.4)
@@ -90,7 +84,6 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     netrc (0.7.7)
-    orm_adapter (0.4.0)
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -144,8 +137,6 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    warden (1.2.1)
-      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -155,7 +146,6 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   compass-rails
-  devise
   eventmachine (~> 1.0.0.beta.4.1)
   heroku
   jquery-fileupload-rails
