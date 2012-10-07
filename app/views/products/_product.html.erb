@@ -4,10 +4,8 @@
     <p>
       Tags: <%= raw product.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
     </p>
-  <% if user_signed_in? %>
     <div class="actions">
       <%= link_to "edit", edit_product_path(product) %> |
       <%= link_to "remove", product, :method => :delete %>
     </div>
-  <% end %>
 </div>
