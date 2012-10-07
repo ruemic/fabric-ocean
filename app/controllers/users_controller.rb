@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :require_login, :only => :favorites
+
   def new
     @user = User.new
   end

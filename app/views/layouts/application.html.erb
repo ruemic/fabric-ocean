@@ -8,8 +8,10 @@
   </head>
   <body>
     <div id="container">
-      <%= link_to "Home", root_path %> |
-      <%= link_to "Favorites", favorites_path %>
+      <%= link_to "Home", root_path %>
+      <% if current_user %>
+         | <%= link_to "Favorites", favorites_path %>
+      <% end %>
       <div id="user-nav">
         <% if current_user %>
           Logged in as <%= current_user.email %>.
