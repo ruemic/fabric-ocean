@@ -1,0 +1,4 @@
+  <h4 class="center">Your Favorites</h4>
+  <table class="formBox">
+    <%= raw user_favorites_for(current_user, :type => :product, :delve => true) %>
+  </table>

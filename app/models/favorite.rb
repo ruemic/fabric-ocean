@@ -1,3 +1,4 @@
+# Got this code from
 # http://doblock.com/articles/creating-an-extensible-user-favorites-system-in-rails
 
 class Favorite < ActiveRecord::Base
