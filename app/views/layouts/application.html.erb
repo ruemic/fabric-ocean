@@ -2,14 +2,21 @@
 <html>
   <head>
     <title>Product Gallery</title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tag %>
   </head>
   <body>
     <div id="container">
+      <%= link_to "Home", root_path %>
       <div id="user-nav">
-          <p>Logged in as </p>
+        <% if current_user %>
+          Logged in as <%= current_user.email %>.
+          <%= link_to "Log out", logout_path %>
+        <% else %>
+          <%= link_to "Sign up", signup_path %> or
+          <%= link_to "log in", login_path %>.
+        <% end %>
       </div>
 
       <% flash.each do |name, msg| %>

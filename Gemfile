@@ -49,7 +49,8 @@ gem 'carrierwave'
 gem 'rmagick'
 #tagging system
 gem 'acts-as-taggable-on'
-
+# Auth
+gem 'sorcery'
 #CSS Authoring Framework
-gem "compass-rails"
+gem 'compass-rails'
 
