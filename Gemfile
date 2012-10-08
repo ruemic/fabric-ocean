@@ -53,4 +53,6 @@ gem 'acts-as-taggable-on'
 gem 'sorcery'
 #CSS Authoring Framework
 gem 'compass-rails'
+# Pagination
+gem 'will_paginate'
 

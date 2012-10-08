@@ -8,9 +8,22 @@
 
 
 <div id="products">
-  <%= render @products %>
+  <% for product in @products %>
+  <div class="product">
+    <%= link_to image_tag(product.image_url(:thumb)), product if product.image? %>
+    <div class="name"><%= product.name %></div>
+    <p>
+      Tags: <%= raw product.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+    </p>
+    <div class="actions">
+      <%= link_to "edit", edit_product_path(product) %> |
+      <%= link_to "remove", product, :method => :delete %>
+    </div>
+  </div>
+  <% end %>
 </div>
 <div class="clear"></div>
+<div class="clear"><%= will_paginate @products, previous_label: h("<"), next_label: h(">") %></div>
 
 <%= form_for Product.new do |f| %>
   <%= f.label :image, "Upload paintings:" %>
