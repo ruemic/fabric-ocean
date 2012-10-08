@@ -1,0 +1,13 @@
+<h2> Your Favorite Fabrics</h2>
+
+<%= form_for(current_user) do |f| %>
+  <%= div_for(user_favorites) do |favorite| %>
+    <p><%= favorite.name %></p>
+    <img src="<%= favorite.image %>">
+    <input type="checkbox" id="<%= favorite.id %>">
+
+  <% end %>
+  <%= f.submit %>
+  <div class="clear">
+
+<% end %>

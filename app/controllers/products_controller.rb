@@ -12,6 +12,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def favorites
+  end
+
   def show
     @product = Product.find(params[:id])
   end
