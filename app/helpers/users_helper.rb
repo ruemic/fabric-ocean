@@ -1,5 +1,18 @@
 module UsersHelper
 
+  def test
+  html = ""
+  html  = <<HTML
+
+<% @current_user.favorable(type: "product").each do |f| %>
+  <%= @current_user.id %>
+  <p><%= f.id %></p>
+  <img src="<%= f.id %>">
+  <%= f.id %>
+<% end %>
+HTML
+  end
+
   def user_favorites_for(user=@current_user, opts={})
     # confirm that the user variable is of class User
     raise ArgumentError unless user.class == User

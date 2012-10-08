@@ -1,10 +1,17 @@
-<form>
+<h4>Your Favorites</h4>
 
 
-<h4 class="center">Your Favorites</h4>
-  <table class="formBox">
-    <%= raw user_favorites_for(current_user, :type => :product, :delve => true) %>
-  </table>
+  <%= @current_user.favorable %>
 
-  <input type="submit">
-<form>
+  <hr>
+
+  <%= test %>
+
+  <hr>
+
+<% @current_user.favorable(type: "product").each do |f| %>
+  <%= @current_user.id %>
+  <p><%= f.id %></p>
+  <img src="<%= f.id %>">
+  <%= f.id %>
+<% end %>
