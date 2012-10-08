@@ -7,6 +7,7 @@
 </div>
 
 
+
 <div id="products">
   <% for product in @products %>
   <div class="product">
@@ -23,7 +24,7 @@
   <% end %>
 </div>
 <div class="clear"></div>
-<div class="clear"><%= will_paginate @products, previous_label: h("<"), next_label: h(">") %></div>
+<%= will_paginate @products, previous_label: h("<"), next_label: h(">") %>
 
 <%= form_for Product.new do |f| %>
   <%= f.label :image, "Upload paintings:" %>
