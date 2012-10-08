@@ -1,17 +1,14 @@
-<h4>Your Favorites</h4>
 
+<h2> Your Favorite Fabrics</h2>
 
-  <%= @current_user.favorable %>
+<%= form_for(current_user) do |f| %>
+  <%= div_for(user_favorites) do |favorite| %>
+    <p><%= favorite.name %></p>
+    <img src="<%= favorite.image %>">
+    <input type="checkbox" id="<%= favorite.id %>">
 
-  <hr>
+  <% end %>
+  <%= f.submit %>
+  <div class="clear">
 
-  <%= test %>
-
-  <hr>
-
-<% @current_user.favorable(type: "product").each do |f| %>
-  <%= @current_user.id %>
-  <p><%= f.id %></p>
-  <img src="<%= f.id %>">
-  <%= f.id %>
 <% end %>

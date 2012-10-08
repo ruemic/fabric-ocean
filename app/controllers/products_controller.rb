@@ -1,15 +1,17 @@
 class ProductsController < ApplicationController
 
-
   # GET /products
   def index
     if params[:tag]
       @header_name = params[:tag].titleize
-      @products = Product.tagged_with(params[:tag])
+      @products = Product.tagged_with(params[:tag]).page(params[:page]).per_page(8)
     else
       @header_name = "Fabric"
-      @products = Product.all
+      @products = Product.order("id").page(params[:page]).per_page(8)
     end
+  end
+
+  def favorites
   end
 
   def show

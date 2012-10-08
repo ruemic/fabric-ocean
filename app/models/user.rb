@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  has_many :favorites
+  has_and_belongs_to_many :products
 
-  attr_accessible :email, :password, :password_confirmation, :user_id
+  attr_accessible :email, :password, :password_confirmation
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

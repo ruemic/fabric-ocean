@@ -43,8 +43,13 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-#uploads
+# manages uploads
 gem 'carrierwave'
+# gem 'carrierwave_direct'
+# handles background jobs
+# gem 'sidekiq'
+# talks to S3
+gem 'fog'
 #image processing
 gem 'rmagick'
 #tagging system
@@ -53,4 +58,7 @@ gem 'acts-as-taggable-on'
 gem 'sorcery'
 #CSS Authoring Framework
 gem 'compass-rails'
+# Pagination
+gem 'will_paginate'
+
 
