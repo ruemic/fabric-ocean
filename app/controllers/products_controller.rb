@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  before_filter :require_login, :only => :show
+
   # GET /products
   def index
     if params[:tag]
