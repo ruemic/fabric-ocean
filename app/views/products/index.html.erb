@@ -7,7 +7,7 @@
 </div>
 
 <div id="products">
-  <% for product in @products %>
+  <% @products.each do |product| %>
   <div class="product">
     <%= link_to image_tag(product.image_url(:thumb)), product if product.image? %>
     <div class="name"><%= product.name %></div>
