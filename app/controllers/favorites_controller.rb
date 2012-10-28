@@ -8,6 +8,13 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    @products = Favorite.where(:user_id => current_user.id).map(&:product)
+    @favorites = Favorite.where(:user_id => current_user.id)
   end
+
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    redirect_to favorites_url, notice: "Favorite was successfully deleted."
+  end
+
 end
