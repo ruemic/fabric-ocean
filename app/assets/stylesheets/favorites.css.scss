@@ -21,7 +21,7 @@
   .actions {
     opacity: 0;
     -webkit-transition: all .7s;
-    .close {
+    .destroy {
       top: -8px;
       right: -8px;
       text-decoration: none;
@@ -42,7 +42,7 @@
 //   }
 // }
 .add-to-fav {
-  display: none;
+  // display: none;
 }
 
 // .fav-star {
