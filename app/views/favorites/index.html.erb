@@ -1,17 +1,25 @@
 <h1 class="gallery-name"><%= current_user.email %>'s Favorites</h1>
 
-<div id="products">
-<% @favorites.each do |favorite| %>
-<div class="product">
-  <div class="image">
-  <%= link_to image_tag(Product.find(favorite.product_id).image_url(:thumb)), Product.find(favorite.product_id)  %>
-  </div>
+<div id="work-area">
+  <div id="products">
+  <% @favorites.each do |favorite| %>
 
-  <div class="actions">
-    <%= link_to "remove from favorites", favorite_path(favorite), :method => :delete, :confirm => 'Are you sure ?' %>
+  <div class="favorite">
+    <div class="image">
+    <%= link_to image_tag(Product.find(favorite.product_id).image_url(:thumb)), Product.find(favorite.product_id)  %>
+    </div>
 
+    <div class="actions">
+
+      <%= link_to "X", favorite_path(favorite),
+          :method => :delete,
+          :confirm => 'Remove from Favorites?',
+          :class => 'close' %>
+
+    </div>
   </div>
-</div>
-<% end %>
+  <% end %>
+  </div>
 </div>
 <div class="clear"></div>
+
