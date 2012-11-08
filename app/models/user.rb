@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  has_and_belongs_to_many :products
+  has_many :products, :through => :favorites
+  has_many :favorites, :dependent => :destroy
 
   attr_accessible :email, :password, :password_confirmation
 

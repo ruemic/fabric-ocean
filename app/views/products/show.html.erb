@@ -11,8 +11,8 @@
   </p>
 
   <%= form_tag(:controller => "favorites", :action => "create", :method => "post" ) do %>
-    <%= text_field_tag :user_id, current_user.id, :class => "add-to-fav" %>
-    <%= text_field_tag :product_id, @product.id,  :class => "add-to-fav" %>
+    <%= text_field_tag :user_id, current_user.id, :class => "user_id add-to-fav" %>
+    <%= text_field_tag :product_id, @product.id,  :class => "product_id add-to-fav" %>
     <div class="favorite-it"><span class="fav-star">&#9734;</span> <%= submit_tag "favorite it!" %> </div>
   <% end %>
 

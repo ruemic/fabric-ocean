@@ -8,4 +8,20 @@
       <%= link_to "edit", edit_product_path(product) %> |
       <%= link_to "remove", product, :method => :delete %>
     </div>
+
+    <div class="fav-it">
+      <%= form_tag url_for( :controller => "favorites",
+                            :action => "create",
+                            :method => "post",
+                            :user_id => current_user.id,
+                            :product_id => product.id ),
+                            :remote => true do %>
+
+        <div class="favorite-it">
+          <span class="fav-star">&#9734;</span>
+          <%= submit_tag "favorite it!" %>
+        </div>
+      <% end %>
+    </div>
+
 </div>

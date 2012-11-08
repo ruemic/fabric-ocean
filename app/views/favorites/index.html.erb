@@ -9,6 +9,7 @@
     <%= link_to image_tag(Product.find(favorite.product_id).image_url(:thumb)), Product.find(favorite.product_id)  %>
     </div>
 
+
     <div class="actions">
 
       <%= link_to "X", favorite_path(favorite),

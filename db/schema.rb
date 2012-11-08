@@ -20,16 +20,13 @@ ActiveRecord::Schema.define(:version => 20121009035628) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "favorites", ["user_id", "product_id"], :name => "index_favorites_on_user_id_and_product_id", :unique => true
+
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "products_users", :id => false, :force => true do |t|
-    t.integer "product_id"
-    t.integer "user_id"
   end
 
   create_table "taggings", :force => true do |t|

@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   attr_accessible :name, :image, :tag_list
   acts_as_taggable
 
-  has_many :favorites
+  # belongs_to :favorite
   mount_uploader :image, ImageUploader
 
   before_create :default_name
