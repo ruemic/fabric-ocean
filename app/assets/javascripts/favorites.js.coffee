@@ -8,5 +8,12 @@
 $ ->
   $(".favorite").draggable()
 
+
+  $(".fav-star").on "click", ->
+    $(@).parent('form').submit()
+
   $(".favorite-it").bind "ajax:success", ->
-    $(@).find('.fav-star').addClass('favorited')
+    $(@).parents('.product').addClass('favorited')
+
+  $(".un-favorite").bind "ajax:success", ->
+    $(@).parents('.product').removeClass('favorited')

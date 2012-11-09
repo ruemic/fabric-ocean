@@ -8,6 +8,8 @@ Gallery::Application.routes.draw do
 
   get "tags/:tag", to: "products#index", as: :tag
   match '/users/favorites', :controller => 'users', :action => 'favorites'
+  match '/favorites/:user_id/:product_id', :controller => 'favorites', :action => 'destroy'
+
 
   resources :users
   resources :sessions

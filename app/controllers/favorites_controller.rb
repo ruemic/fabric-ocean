@@ -12,7 +12,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
+    @favorite = Favorite.find(:all, :conditions => { :user_id => params[:user_id], :product_id => params[:product_id]} ).first
     @favorite.destroy
     redirect_to favorites_url, notice: "Favorite was successfully deleted."
   end

@@ -8,12 +8,32 @@
 
 <div id="products">
   <% @products.each do |product| %>
-  <div class="product">
+  <div class="product
+    <% @favorites.each do |favorite| %>
+      <% if favorite.product_id == product.id %>
+        favorited
+      <% end %>
+    <% end %>
+  ">
+
+
     <%= link_to image_tag(product.image_url(:thumb)), product if product.image? %>
     <div class="name"><%= product.name %></div>
     <p>
       Tags: <%= raw product.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
     </p>
+
+    <div class="un-favorite">
+    <%= form_tag url_for( :controller => "favorites",
+                  :action => "destroy",
+                  :method => "delete",
+                  :user_id => current_user.id,
+                  :product_id => product.id),
+                  :remote => true do %>
+      <%= submit_tag "Un favorite it!" %>
+    <% end %>
+    </div>
+
 
     <div class="favorite">
       <div class="favorite-it">
@@ -38,13 +58,7 @@
             <% end %>
           <% end %>
 
-          <span class="fav-star
-            <% @favorites.each do |favorite| %>
-              <% if favorite.product_id == product.id %>
-                favorited
-              <% end %>
-            <% end %>
-          ">&#9734;</span>
+          <span class="fav-star">&#9734;</span>
           <%= submit_tag "favorite it!" %>
         </div>
       <% end %>
