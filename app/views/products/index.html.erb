@@ -15,13 +15,9 @@
       Tags: <%= raw product.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
     </p>
 
-    <% current_user.favorites.product.each do |favorite_product| %>
-      <% if favorite_product.first.product_id == product.id %>
-        <h1> Un favorite</h1>
-      <% end %>
-    <% end %>
+    <div class="favorite">
+      <div class="favorite-it">
 
-    <div class="fav-it">
       <%= form_tag url_for( :controller => "favorites",
                             :action => "create",
                             :method => "post",
@@ -29,8 +25,26 @@
                             :product_id => product.id ),
                             :remote => true do %>
 
-        <div class="favorite-it">
-          <span class="fav-star">&#9734;</span>
+
+         <% @favorites.each do |favorite| %>
+            <% if favorite.product_id == product.id %>
+              <div class="un-fav">
+                <%= link_to "X", favorite_path(favorite),
+                      :method => :delete,
+                      :confirm => 'Remove from Favorites?',
+                      :class => 'destroy'
+                %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <span class="fav-star
+            <% @favorites.each do |favorite| %>
+              <% if favorite.product_id == product.id %>
+                favorited
+              <% end %>
+            <% end %>
+          ">&#9734;</span>
           <%= submit_tag "favorite it!" %>
         </div>
       <% end %>

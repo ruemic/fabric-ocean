@@ -8,5 +8,5 @@
 $ ->
   $(".favorite").draggable()
 
-  $(".fav-it").bind "ajax:success", ->
-    $(@).find('.fav-star').addClass('success')
+  $(".favorite-it").bind "ajax:success", ->
+    $(@).find('.fav-star').addClass('favorited')

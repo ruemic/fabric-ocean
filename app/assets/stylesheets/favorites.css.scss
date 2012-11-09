@@ -60,29 +60,34 @@
 }
 
 .fav-star{
-  content: "2605";
   position: relative;
   font-size: 40px;
   @include text-shadow(#6975B4 1px 0px 1px);
-  &.success {
-    left:10px;
-    content: "\2605";
-    position: absolute;
-    font-size: 35px;
+  &.favorited {
+    font-size: 40px;
     color: #FFEB00;
-    @include text-shadow(rgba(blue, 0.2) 1px 2px 0)
+    @include text-shadow(rgba(blue, 0.8) 1px 2px 0);
+    &:before {
+      top: -2px;
+      left: 2px;
+      content: "\2605";
+      position: absolute;
+      font-size: 35px;
+      color: #FFEB00;
+      @include text-shadow(rgba(blue, 0.2) 1px 2px 0);
+    }
   }
 }
 
-.fav-star:hover:before {
-  top: -2px;
-  left: 2px;
-  content: "\2605";
-  position: absolute;
-  font-size: 35px;
-  color: #FFEB00;
-  @include text-shadow(rgba(blue, 0.2) 1px 2px 0)
-}
+// .fav-star:hover:before {
+//   top: -2px;
+//   left: 2px;
+//   content: "\2605";
+//   position: absolute;
+//   font-size: 35px;
+//   color: #FFEB00;
+//   @include text-shadow(rgba(blue, 0.2) 1px 2px 0)
+// }
 
 
 #work-area {

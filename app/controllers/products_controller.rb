@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
+    @favorites = current_user.favorites
     if params[:tag]
       @header_name = params[:tag].titleize
       @products = Product.tagged_with(params[:tag]).page(params[:page]).per_page(8)
