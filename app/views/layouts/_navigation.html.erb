@@ -1,0 +1,21 @@
+<div id="top-bar">
+  <div>
+    <%= link_to "Home", root_path, :class => "home" %>
+    <% if current_user %>
+      <div id="nav-favorites">
+        <%= link_to favorites_path do %>
+          <span id="nav-fav-star">&#9734;</span>
+        <% end %>
+      </div>
+    <% end %>
+    <nav id="user-nav">
+      <% if current_user %>
+        Logged in as <%= current_user.email %>.
+        <%= link_to "Log out", logout_path %>
+      <% else %>
+        <%= link_to "Sign up", signup_path %> or
+        <%= link_to "log in", login_path %>.
+      <% end %>
+    </nav>
+  </div>
+</div>

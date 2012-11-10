@@ -1,0 +1,141 @@
+
+#tag_cloud {
+  padding: 20px;
+  background: transparentize(#eee,.9);
+  margin: 20px 20px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+#products {
+  @include clearfix;
+}
+
+.product {
+  float: left;
+  position: relative;
+  margin: 20px;
+  &:hover {
+    .fav-star {
+      opacity: .88;
+    }
+  }
+
+  > a > img {
+    border-radius: 14px;
+    border-top: 1px solid transparentize(#D6D6D6,.85);
+    border-left: 1px solid transparentize(#8D8D8D,.82);
+    @include transition(box-shadow, .2s);
+    @include box-shadow(2px 3px 5px 0px transparentize(black,.7));
+  }
+  .details {
+    min-height: 40px;
+    .name {
+      color: rgb(221, 221, 221);
+      padding-top: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .actions {
+      font-size: 10px;
+      text-align: center;
+      color: #777;
+    }
+  }
+}
+.product.favorited {
+  > a > img {
+    @include box-shadow(0 0 1px 4px #FFDB6B);
+    @include transition(box-shadow, .26s);
+  }
+  .fav-it { display: none; }
+  .un-fav-it { display: block; }
+  .fav-star {
+    opacity: 1;
+    color: darken(#FFEB00,10%);
+    @include text-shadow(rgba(83, 80, 78, 0.8));
+    &:before {
+      top: 7px;
+      left: 2px;
+      content: "\2605";
+      font-size: 30px;
+      position: absolute;
+      color: lighten(#FFDB6B,9%);
+    }
+  }
+}
+.fav-star {
+  opacity: .3;
+  font-size: 35px;
+  position: relative;
+}
+.favorite-toggle {
+  position: absolute;
+  right: 2px;
+  top:  210px;
+  width: 60px;
+  height: 60px;
+  > a > form > input { display: none; }
+}
+
+.fav-it {
+  color: #D8D8D8;
+}
+.un-fav-it {
+  display: none;
+}
+
+
+
+
+.upload {
+  border-top: solid 1px #CCC;
+  width: 400px;
+  padding-top: 10px;
+  margin-top: 10px;
+
+  .progress {
+    margin-top: 8px;
+    border: solid 1px #555;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    .bar {
+      height: 10px;
+      background: #3EC144;
+    }
+  }
+}
+
+//
+.gallery-name {
+  top: 0;
+  z-index: 101;
+  @extend .center;
+  h1 {
+    line-height: $top-bar-height;
+    z-index: 101;
+    font-size: 2em;
+    color: darken(#eee,30%);
+  }
+}
+
+// Show
+
+
+#show.product {
+background-color: rgb(61, 61, 61);
+background-image: url('tiny_grid.png') ;
+  .favorite-toggle {
+    top: 50px;
+  }
+  .full-size-img {
+    @include border-radius(20px);
+    margin-top: 40px;
+    width: 100%;
+  }
+  &.favorited {
+
+  }
+}
+

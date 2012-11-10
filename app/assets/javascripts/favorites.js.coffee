@@ -6,14 +6,25 @@
 
 
 $ ->
+  bigStar = $("#nav-fav-star")
+  favIt = $(".fav-it")
+  unFavIt = $(".un-fav-it")
   $(".favorite").draggable()
 
+  favIt.live "click", ->
+    bigStar.css
+      color: "#EEEABB"
+    $(@).find('form').submit()
 
-  $(".fav-star").on "click", ->
-    $(@).parent('form').submit()
+  unFavIt.live "click", ->
+    $(@).find('form').submit()
+    bigStar.css
+      color: "#0E3850;"
 
-  $(".favorite-it").bind "ajax:success", ->
+
+
+  $(".fav-it").live "ajax:success", ->
     $(@).parents('.product').addClass('favorited')
 
-  $(".un-favorite").bind "ajax:success", ->
+  $(".un-fav-it").live "ajax:success", ->
     $(@).parents('.product').removeClass('favorited')

@@ -8,6 +8,7 @@ class FavoritesController < ApplicationController
   end
 
   def index
+    @header_name = "Favorites"
     @favorites = Favorite.where(:user_id => current_user.id)
   end
 

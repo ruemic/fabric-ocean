@@ -1,21 +1,36 @@
-<h1 class="gallery-name"><%= current_user.email %>'s Favorites</h1>
+<div class="gallery-name">
+  <div>
+    <span>Gallery:</span>
+    <h1><%= @header_name %></h1>
+  </div>
+</div>
 
 <div id="work-area">
+  <div id="welcome">
+    <h1>Work Area </h1>
+    <h3>Style Tiles are fully Draggable! &darr;<h3>
+  <div>
   <div id="products">
   <% @favorites.each do |favorite| %>
 
   <div class="favorite">
-    <div class="image">
-    <%= link_to image_tag(Product.find(favorite.product_id).image_url(:thumb)), Product.find(favorite.product_id)  %>
-    </div>
+
+    <%= link_to image_tag(Product.find(favorite.product_id).image_url(:thumb)),
+                            Product.find(favorite.product_id),
+                            :class => "product-thumbnail" %>
 
 
     <div class="actions">
 
-      <%= link_to "X", favorite_path(favorite),
-          :method => :delete,
-          :confirm => 'Remove from Favorites?',
-          :class => 'destroy' %>
+     <%= form_tag url_for( :controller => "favorites",
+                  :action => "destroy",
+                  :method => "delete",
+                  :user_id => current_user.id,
+                  :product_id => favorite.product_id),
+                  :remote => true do %>
+      <%= submit_tag "Un favorite it!" %>
+      <% end %>
+
 
     </div>
   </div>

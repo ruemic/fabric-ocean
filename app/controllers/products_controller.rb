@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_filter :require_login, :only => :show
+  before_filter :require_login
 
   # GET /products
   def index
@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
       @header_name = params[:tag].titleize
       @products = Product.tagged_with(params[:tag]).page(params[:page]).per_page(8)
     else
-      @header_name = "Fabric"
+      @header_name = "All"
       @products = Product.order("id").page(params[:page]).per_page(8)
     end
   end

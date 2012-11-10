@@ -4,7 +4,7 @@
 @import 'compass/css3';
 
 .favorite {
-  margin:0px 10px 10px 0px;
+  margin: 10px;
   display: inline-block;
   position: relative;
   -webkit-transform: rotate(0deg);
@@ -13,11 +13,9 @@
       opacity: 1;
     }
   }
- 
   .image {
     img { border-radius: 3px; }
   }
-
   .actions {
     opacity: 0;
     -webkit-transition: all .7s;
@@ -33,63 +31,14 @@
   }
 }
 
-
-
-// @for $i from 1 through 12 {
-//   .rotate#{$i*30} {
-//     -webkit-transform: rotate(0deg +($i*30));
-//     -webkit-transition: all .33s;
-//   }
-// }
-.add-to-fav {
-  // display: none;
-}
-
-// .fav-star {
-//   font-size: 4em;
-//   font-weight: 900;
-//   color: red;
-
-// }
-
-.favorite-it {
-  float: right;
-  color: rgb(255, 249, 202);
-  font-size: 1.8em;
-  @include single-text-shadow(2px);
-}
-
-.fav-star{
-  position: relative;
-  font-size: 40px;
-  @include text-shadow(#6975B4 1px 0px 1px);
-  &.favorited {
-    font-size: 40px;
-    color: #FFEB00;
-    @include text-shadow(rgba(blue, 0.8) 1px 2px 0);
-    &:before {
-      top: -2px;
-      left: 2px;
-      content: "\2605";
-      position: absolute;
-      font-size: 35px;
-      color: #FFEB00;
-      @include text-shadow(rgba(blue, 0.2) 1px 2px 0);
-    }
+#work-area {
+  #welcome {
+    h1 { font-size: 26px;}
   }
 }
 
-// .fav-star:hover:before {
-//   top: -2px;
-//   left: 2px;
-//   content: "\2605";
-//   position: absolute;
-//   font-size: 35px;
-//   color: #FFEB00;
-//   @include text-shadow(rgba(blue, 0.2) 1px 2px 0)
-// }
-
-
-#work-area {
-  min-height: 600px;
+#work-area #products {
+  border: 5px solid #5F5F5F;
+  min-height: 1600px;
+  @include clearfix;
 }

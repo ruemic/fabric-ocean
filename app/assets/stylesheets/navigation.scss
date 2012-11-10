@@ -1,0 +1,87 @@
+
+// Navigation
+
+#top-bar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  > div {
+    z-index: 100;
+    height: $top-bar-height;
+    width: $container-width;
+    margin: 0px auto;
+    background: black;
+    position: relative;
+    @include background( linear-gradient(top, black, #333, lighten(#333,.2), #333, black) );
+  }
+  .home {
+    font-size: 18px;
+    margin-left: 1em;
+    line-height: $top-bar-height;
+  }
+}
+#nav-favorites {
+  position: absolute;
+  top:  12px;
+  right: 0px;
+  z-index: 100;
+  font-size: 22px;
+  line-height: $top-bar-height;
+}
+#nav-fav-star {
+  @include background( linear-gradient(top, black, #333, lighten(#333,.2), #333, black) );
+  border-radius: 0 0px 0px 40px;
+  padding: 0px 5px 6px 10px;
+  position: relative;
+  font-size: 60px;
+  color: #0E3850;
+  @include text-shadow(rgba(83, 80, 78, 0.8));
+  @include transition(color, 2s);
+  &:before {
+    top: 17px;
+    left: 15px;
+    content: "\2605";
+    position: absolute;
+    font-size: 50px;
+    color: #D5D5D5;
+  }
+}
+
+#user-nav {
+  width: auto;
+  padding: .5em;
+  position: absolute;
+  top: 0px;
+  right: 90px;
+  text-align: right;
+  background: rgb(184, 184, 184);
+}
+
+.gallery-name {
+  top: 0;
+  z-index: 101;
+  @extend .center;
+  span {
+    top: 15px;
+    left: 120px;
+    color: darken(#eee,30%);
+    position: absolute;
+  }
+  >div > h1 {
+    left: 180px;
+    top: 5px;
+    width: auto;
+    @include inline-block;
+    z-index: 101;
+    font-size: 1.5em;
+    color: #F7F7F7;
+    line-height: 30px;
+    padding: 0 12px;
+    position: relative;
+    border-radius: 15px;
+    background: transparentize(white,.6);
+    @include box-shadow(inset 1px 1px 4px black, inset -1px -1px 1px transparentize(white,.4));
+  }
+}
