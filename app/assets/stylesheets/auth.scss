@@ -1,0 +1,17 @@
+#login, #register {
+  @extend #container;
+  background-color: $dark-gray;
+  margin-top: 80px;
+  padding: 10px 30px;
+  width: 300px;
+  box-sizing: border-box;
+  label {
+    width: 100%;
+    display: block;
+  }
+  input[type="checkbox"] + label {
+    display: inline;
+    width: auto;
+  }
+  color: darken(white,25%);
+}

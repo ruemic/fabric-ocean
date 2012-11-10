@@ -6,21 +6,34 @@ html, body {
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
+#wrapper {
+  margin-top: 40px;
 
+}
 
 #container {
-  width: $container-width;
   margin: $top-bar-height auto;
-  background-color: #414142;
-  border: solid 1px black;
-  border-radius: 5px;
+  background-color: $dark-gray;
+  border: solid 1px transparentize(black,.5);
+  border-left: solid 1px transparentize(white,.8);
   @include clearfix;
+  @include transition(width, .3s);
+  @include widths;
+  @include box-shadow(5px 2px 60px -11px rgba(0, 0, 0, 0.9));
 }
+
+#index {
+  @extend #container;
+}
+
+
 
 #flash_notice, #flash_alert {
   width: 50%;
+  left: 20%;
+  margin-top: 50px;
+  position: relative;
   padding: 5px 8px;
-  margin: 10px 0;
 }
 
 #flash_notice {

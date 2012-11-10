@@ -15,4 +15,5 @@
 /tmp
 
 /public/uploads
+/app/assets/images/swatches
 .DS_Store

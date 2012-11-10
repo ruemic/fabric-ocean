@@ -1,4 +1,7 @@
 
+
+
+
 // Navigation
 
 #top-bar {
@@ -7,14 +10,14 @@
   width: 100%;
   position: fixed;
   z-index: 100;
+  background: black;
+  @include background( linear-gradient(top, black, #333, lighten(#333,.2), #333, black) );
   > div {
     z-index: 100;
     height: $top-bar-height;
-    width: $container-width;
+    width: 96%;
     margin: 0px auto;
-    background: black;
     position: relative;
-    @include background( linear-gradient(top, black, #333, lighten(#333,.2), #333, black) );
   }
   .home {
     font-size: 18px;
@@ -24,64 +27,93 @@
 }
 #nav-favorites {
   position: absolute;
-  top:  12px;
-  right: 0px;
+  top:  6px;
+  left: 90px;
   z-index: 100;
   font-size: 22px;
   line-height: $top-bar-height;
 }
 #nav-fav-star {
   @include background( linear-gradient(top, black, #333, lighten(#333,.2), #333, black) );
-  border-radius: 0 0px 0px 40px;
-  padding: 0px 5px 6px 10px;
+  border-radius: 40px;
+  padding: 0px 8px 4px 10px;
   position: relative;
-  font-size: 60px;
+  font-size: 45px;
   color: #0E3850;
+  border: 1px solid black;
+  border-left: 1px solid transparentize(white,.7);
   @include text-shadow(rgba(83, 80, 78, 0.8));
-  @include transition(color, 2s);
+  @include box-shadow(2px 2px 5px transparentize(black,.5));
+  @include transition(color, .5s);
   &:before {
-    top: 17px;
-    left: 15px;
+    top: 7px;
+    left: 12px;
     content: "\2605";
     position: absolute;
-    font-size: 50px;
-    color: #D5D5D5;
+    font-size: 40px;
+    color: #FDFFD0;
   }
 }
 
 #user-nav {
+  color: darken(white,28%);
   width: auto;
-  padding: .5em;
+  padding: 0 .2em;
   position: absolute;
   top: 0px;
-  right: 90px;
+  right: 0px;
   text-align: right;
-  background: rgb(184, 184, 184);
+  line-height: 30px;
+  padding: 0 .4em;
+  background: darken(rgb(184, 184, 184),55%);
+  @include box-shadow(2px 2px 5px 1px transparentize(black,.5));
+  // @include background( linear-gradient(top, #979797, #B3B3B3, #BBB, #8A8989, #A29A9A) );
+  #logged-in-as {
+    color: rgb(162, 162, 162);
+    display: none;
+  }
+  > a {
+    color: darken(white,40%);
+    padding: 0 .8em;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 26px;
+    border-radius: 10px;
+    border-left: solid 1px transparentize(black,.5);
+    @include box-shadow(2px 2px 2px 0px transparentize(black,.8));
+    @include background( linear-gradient(top, rgba(151, 151, 151, 0.33), rgba(39, 34, 34, 0.27), rgba(94, 94, 94, 0.35), rgba(43, 35, 35, 0.31), rgba(162, 154, 154, 0.24)) );
+  }
+  @media (min-width: 722px) {
+    right: 10px;
+    padding: 0 .5em;
+    #logged-in-as {
+      display: inline-block;
+      margin-right: 12px;
+    }
+  }
 }
 
 .gallery-name {
   top: 0;
+  left: 164px;
   z-index: 101;
   @extend .center;
-  span {
-    top: 15px;
-    left: 120px;
-    color: darken(#eee,30%);
-    position: absolute;
-  }
-  >div > h1 {
-    left: 180px;
-    top: 5px;
-    width: auto;
-    @include inline-block;
-    z-index: 101;
-    font-size: 1.5em;
-    color: #F7F7F7;
-    line-height: 30px;
-    padding: 0 12px;
-    position: relative;
-    border-radius: 15px;
-    background: transparentize(white,.6);
-    @include box-shadow(inset 1px 1px 4px black, inset -1px -1px 1px transparentize(white,.4));
+  > div {
+    width: 96%;
+    > h1 {
+      left: 0px;
+      top: 5px;
+      width: auto;
+      @include inline-block;
+      z-index: 101;
+      font-size: 1.5em;
+      color: #F7F7F7;
+      line-height: 30px;
+      padding: 0 12px;
+      position: relative;
+      border-radius: 15px;
+      background: transparentize(white,.6);
+      @include box-shadow(inset 1px 1px 4px black, inset -1px -1px 1px transparentize(white,.4));
+    }
   }
 }

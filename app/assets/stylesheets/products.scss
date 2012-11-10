@@ -86,9 +86,6 @@
   display: none;
 }
 
-
-
-
 .upload {
   border-top: solid 1px #CCC;
   width: 400px;
@@ -107,35 +104,35 @@
   }
 }
 
-//
-.gallery-name {
-  top: 0;
-  z-index: 101;
-  @extend .center;
-  h1 {
-    line-height: $top-bar-height;
-    z-index: 101;
-    font-size: 2em;
-    color: darken(#eee,30%);
-  }
-}
 
 // Show
 
 
-#show.product {
-background-color: rgb(61, 61, 61);
-background-image: url('tiny_grid.png') ;
-  .favorite-toggle {
-    top: 50px;
-  }
-  .full-size-img {
-    @include border-radius(20px);
-    margin-top: 40px;
-    width: 100%;
-  }
-  &.favorited {
-
+#show{
+  width: 96%;
+  margin: 50px auto;
+  background: $dark-gray;
+  @include clearfix;
+  .product {
+    header {
+      h1 { font-size: 20px; margin-bottom: 10px;}
+      margin-top: 20px;
+      color: darken(white,10%);
+    }
+    .favorite-toggle {
+      top: 10px;
+      right: 10px;
+    }
+    .full-size-img {
+      @include border-radius(20px);
+      margin-top: 40px;
+      width: 100%;
+    }
+    &.favorited {
+    }
+    .back-button {
+      position: absolute;
+      top: -10px;
+    }
   }
 }
-

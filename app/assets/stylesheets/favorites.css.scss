@@ -1,7 +1,22 @@
 // Place all the styles related to the Favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'compass/css3';
+
+#favorites {
+  margin-top: $top-bar-height;
+  background: $dark-gray;
+  .gallery-name h1 {
+    color: $star-yellow;
+  }
+}
+
+#work-area #products {
+  border: 5px solid #5F5F5F;
+  min-height: 1600px;
+  @include clearfix;
+  background-color: black;
+  background: url('tiny_grid_dark.png');
+}
 
 .favorite {
   margin: 10px;
@@ -25,20 +40,46 @@
       text-decoration: none;
       background: white;
       border-radius: 100px;
-      padding: 4px 7px;
+      border-top: 1px solid transparentize(white,.5);
+      border-bottom: 1px solid transparentize(black,.5);
+      padding: 6px 9px 5px;
       position: absolute;
+      @include background(
+        radial-gradient(#fff, rgb(155, 150, 140) 13px)
+      );
     }
+    .un-fav { display: none; }
   }
 }
 
 #work-area {
-  #welcome {
-    h1 { font-size: 26px;}
+  div & { width: 100%;}
+  position: relative;
+  header {
+    h1 {
+      color: white;
+      font-size: 26px;
+      padding: 20px 0px 20px 20px;
+    }
+  }
+  #drag-hint {
+    border-radius: 10px;
+    padding: 10px 15px;
+    background: transparentize(#eee,.8);
+    color: white;
+    z-index: 50;
+    top: 8px;
+    right: 80px;
+    font-size: 24px;
+    line-height: 30px;
+    position: absolute;
+    @media (max-width: 722px) {
+      top: 0;
+      right: 0;
+      margin-top: 0px;
+      border-radius: 10px;
+      position: relative;
+    }
   }
 }
 
-#work-area #products {
-  border: 5px solid #5F5F5F;
-  min-height: 1600px;
-  @include clearfix;
-}

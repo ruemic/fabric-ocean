@@ -2,10 +2,18 @@
 @import "compass/reset";
 @import "compass/css3";
 
-
-
 $container-width: 90%;
 $top-bar-height: 40px;
+$dark-gray: #414142;
+$star-yellow: #FDFFD0;
+
+@mixin widths {
+    width: 360px;
+    @include transition(width, .3s);
+    @media (min-width: 722px) { width: 722px; }
+    @media (min-width: 1084px) { width: 1084px; }
+    @media (min-width: 1444px) { width: 1444px; }
+}
 
 a {
   color: white;
@@ -23,4 +31,23 @@ a {
     position: relative;
     pointer-events: none;
   }
+}
+
+
+
+input[type="submit"] {
+  font-size: 20px;
+  background: #E0DBE2;
+  display: inline-block;
+  padding: 5px 10px 6px;
+  color: #363636;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  border-radius: 5px;
+  text-shadow: 0 -1px 1px transparentize(#222,.6);
+  border-top: 1px solid transparentize(white,.9);
+  border-bottom: 1px solid transparentize(#222,.6);
+  position: relative;
+  cursor: pointer;
 }
