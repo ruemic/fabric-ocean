@@ -10,10 +10,6 @@
   <p id="notice"><%= notice %></p>
 
   <header>
-    <h1>
-      <b>Name:</b>
-
-    </h1>
     <p>
       Tags: <%= raw @product.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
     </p>
@@ -49,9 +45,7 @@
   </div>
 
 
-  <p class="full-size-show">
-    <%= image_tag @product.image_url , class: "full-size-img" %>
-  </p>
+  <%= image_tag @product.image_url , class: "full-size-img" %>
 
   <% if current_user.email == ENV["ADMIN_EMAIL"] %>
     <%= link_to 'Edit', edit_product_path(@product) %> |

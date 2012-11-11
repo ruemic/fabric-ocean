@@ -116,19 +116,16 @@
   .product {
     header {
       h1 { font-size: 20px; margin-bottom: 10px;}
-      margin-top: 20px;
+      margin: 20px auto;
       color: darken(white,10%);
     }
     .favorite-toggle {
-      top: 10px;
-      right: 10px;
+      top: -4px;
+      right: -18px;
     }
     .full-size-img {
       @include border-radius(20px);
-      margin-top: 40px;
       width: 100%;
-    }
-    &.favorited {
     }
     .back-button {
       position: absolute;
