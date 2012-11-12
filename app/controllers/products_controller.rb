@@ -7,10 +7,10 @@ class ProductsController < ApplicationController
     @favorites = current_user.favorites
     if params[:tag]
       @header_name = params[:tag].titleize
-      @products = Product.tagged_with(params[:tag]).page(params[:page]).per_page(30)
+      @products = Product.tagged_with(params[:tag]).page(params[:page]).per_page(20)
     else
       @header_name = "All"
-      @products = Product.order("id").page(params[:page]).per_page(8)
+      @products = Product.order("id").page(params[:page]).per_page(20)
     end
   end
 

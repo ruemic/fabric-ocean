@@ -8,6 +8,9 @@
 $ ->
   $(".favorite").draggable()
 
+
+  $("#drag-hint").delay(4000).fadeOut('slow')
+
   bigStar = $("#nav-fav-star")
   favIt = $(".fav-it")
   unFavIt = $(".un-fav-it")

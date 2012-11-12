@@ -13,6 +13,8 @@
 }
 
 .product {
+  width: 321px;
+  min-height: 243px;
   float: left;
   position: relative;
   margin: 20px;
@@ -109,27 +111,33 @@
 
 
 #show{
-  width: 96%;
+  width: 100%;
   margin: 50px auto;
-  background: $dark-gray;
+  background: #2E2E2E;
   @include clearfix;
   .product {
+    width: 96%;
+    padding: 2%;
+    height: auto;
+    position: relative;
     header {
-      h1 { font-size: 20px; margin-bottom: 10px;}
+      h1 { font-size: 20px; margin-bottom: 10px; }
       margin: 20px auto;
       color: darken(white,10%);
     }
     .favorite-toggle {
       top: -4px;
-      right: -18px;
+      right: 18px;
     }
     .full-size-img {
       @include border-radius(20px);
-      width: 100%;
+      width: 94%;
+      margin: 0px auto;
     }
     .back-button {
       position: absolute;
       top: -10px;
+      left: 10px;
     }
   }
 }
