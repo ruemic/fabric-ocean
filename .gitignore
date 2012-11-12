@@ -13,7 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-/public/uploads
-/app/assets/images/swatches
 .DS_Store
+
+/public
+/app/assets/images/swatches
