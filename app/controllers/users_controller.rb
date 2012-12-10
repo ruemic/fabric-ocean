@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
   def update
     if request.put?
       @user = User.find(params[:id])

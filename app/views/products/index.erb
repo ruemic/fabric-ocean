@@ -82,3 +82,8 @@
   <% end %>
 
 </div>
+
+
+<%= javascript_tag do %>
+  window.products = <%=raw Product.all.to_json %>;
+<% end %>

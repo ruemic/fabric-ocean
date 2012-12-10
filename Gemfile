@@ -12,6 +12,9 @@ gem 'pg'
 gem 'thin'
 gem 'eventmachine', '~> 1.0.0.beta.4.1'
 
+
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -23,6 +26,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'rabl'
+gem 'oj'
 
 gem 'jquery-fileupload-rails'
 
