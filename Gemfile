@@ -27,6 +27,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
+gem 'backbone-on-rails'
 gem 'rabl'
 gem 'oj'
 

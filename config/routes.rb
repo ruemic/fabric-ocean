@@ -1,6 +1,8 @@
 Gallery::Application.routes.draw do
 
-  root to: "products#index"
+  root to: "main#index"
+
+  # root to: "products#index"
 
   get "signup" => "users#new", as: "signup"
   get "logout" => "sessions#destroy", as: "logout"

@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+  respond_to :json
   before_filter :require_login
 
   # GET /products
