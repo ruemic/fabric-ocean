@@ -15,7 +15,10 @@ Gallery::Application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :products
   resources :favorites
+
+  scope "api" do
+    resources :products
+  end
 
 end

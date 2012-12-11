@@ -1,0 +1,7 @@
+<p><%= @name %></p>
+<h2> Fabric Swatch </h2>
+<p>id: <%= @fabric.id %></p>
+
+<a href="#" class="product-thumbnail">
+  <img src="<%= @fabric.image_url %>">
+</a>

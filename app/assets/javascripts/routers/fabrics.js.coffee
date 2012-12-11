@@ -3,9 +3,16 @@ class Gallery.Routers.Fabrics extends Backbone.Router
     '': 'index'
     'fabrics/:id': 'show'
 
+  initialize: ->
+    window.fabrics = new Gallery.Collections.Fabrics()
+    @fabrics = window.fabrics
+
   index: ->
-    view = new Gallery.Views.FabricsIndex()
-    $("#container").html(view.render().el)
+    @fabrics.fetch
+      success: ->
+        view = new Gallery.Views.FabricsIndex(collection: @fabrics)
+        view.render()
+
 
   show: (id) ->
     alert "fabric #{id}"

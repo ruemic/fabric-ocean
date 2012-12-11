@@ -1,8 +1,7 @@
 class Gallery.Collections.Fabrics extends Backbone.Collection
 
-  url: '/products'
+  url: 'api/products'
 
   model: Gallery.Models.Fabric
 
 
-window.collection = new Gallery.Collections.Fabrics()
