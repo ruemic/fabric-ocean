@@ -7,5 +7,4 @@ class App.Views.FabricGalleryItem extends Backbone.View
     @model = @options.model
 
   render: ->
-    @makeThumbnailURl
     @$el.html(@template(fabric: @model))
