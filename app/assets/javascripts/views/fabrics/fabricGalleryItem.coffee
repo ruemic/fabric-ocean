@@ -1,7 +1,7 @@
-class Gallery.Views.Fabric extends Backbone.View
-  template: JST['fabrics/fabric']
+class App.Views.FabricGalleryItem extends Backbone.View
+  template: JST['fabrics/galleryItem']
 
-  className: "product"
+  className: "galleryItem"
 
   initialize: ->
     @model = @options.model

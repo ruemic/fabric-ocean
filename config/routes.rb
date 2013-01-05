@@ -8,6 +8,8 @@ Gallery::Application.routes.draw do
   get "logout" => "sessions#destroy", as: "logout"
   get "login" => "sessions#new", as: "login"
 
+  get "old" => "products#index"
+
   get "tags/:tag", to: "products#index", as: :tag
   match '/users/favorites', :controller => 'users', :action => 'favorites'
   match '/favorites/:user_id/:product_id', :controller => 'favorites', :action => 'destroy'
@@ -18,6 +20,7 @@ Gallery::Application.routes.draw do
   resources :favorites
 
   scope "api" do
+    get "tags/:tag", to: "products#index", as: :tag
     resources :products
   end
 

@@ -1,1 +1,1 @@
-class Gallery.Models.Fabric extends Backbone.Model
+class App.Models.Fabric extends Backbone.Model

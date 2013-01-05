@@ -1,16 +1,16 @@
-class Gallery.Routers.Fabrics extends Backbone.Router
+class App.Router extends Backbone.Router
   routes:
     '': 'index'
     'fabrics/:id': 'show'
 
   initialize: ->
-    window.fabrics = new Gallery.Collections.Fabrics()
+    window.fabrics = new App.Collections.Fabrics()
     @fabrics = window.fabrics
 
   index: ->
     @fabrics.fetch
       success: ->
-        view = new Gallery.Views.FabricsIndex(collection: @fabrics)
+        view = new App.Views.FabricGallery(collection: @fabrics)
         view.render()
 
 

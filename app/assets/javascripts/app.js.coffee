@@ -1,11 +1,11 @@
-window.Gallery =
+window.App =
   Models: {}
   Collections: {}
   Views: {}
   Routers: {}
   init: ->
-    new Gallery.Routers.Fabrics()
+    new App.Router()
     Backbone.history.start()
 
 $(document).ready ->
-  Gallery.init()
+  App.init()

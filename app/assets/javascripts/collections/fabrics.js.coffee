@@ -1,7 +1,7 @@
-class Gallery.Collections.Fabrics extends Backbone.Collection
+class App.Collections.Fabrics extends Backbone.Collection
 
   url: 'api/products'
 
-  model: Gallery.Models.Fabric
+  model: App.Models.Fabric
 
 
