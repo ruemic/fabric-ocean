@@ -22,6 +22,7 @@ Gallery::Application.routes.draw do
   scope "api" do
     get "tags/:tag", to: "products#index", as: :tag
     resources :products
+    resources :favorites
   end
 
 end
