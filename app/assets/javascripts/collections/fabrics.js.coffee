@@ -9,7 +9,8 @@ class App.Collections.Favorites extends App.Collections.Fabrics
 class App.Collections.TaggedWith extends App.Collections.Fabrics
 
   initialize: (options) ->
-    @tag = options.tag
+    @tag = null
+
 
   url: ->
    "/api/tags/" + @tag
