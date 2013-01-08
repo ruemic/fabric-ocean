@@ -1,6 +1,7 @@
 class App.Router extends Backbone.Router
   routes:
     ''           : 'index'
+    'home'       : 'index'
     'favorites'  : 'favorites'
     'tag/:tag'   : 'tag'
 

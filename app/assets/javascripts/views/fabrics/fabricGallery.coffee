@@ -8,6 +8,7 @@ class App.Views.FabricGallery extends Backbone.View
     @fabrics = @collection
 
   render: =>
+    @$el.empty()
     @collection.each (fabric) ->
       view = new App.Views.FabricGalleryItem(model: fabric)
       $("#container").append(view.render())

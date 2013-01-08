@@ -11,7 +11,6 @@ class App.Collections.TaggedWith extends App.Collections.Fabrics
   initialize: (options) ->
     @tag = null
 
-
   url: ->
    "/api/tags/" + @tag
 
