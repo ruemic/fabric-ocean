@@ -1,20 +1,12 @@
 class App.Collections.Fabrics extends Backbone.Collection
-
+  model: App.Models.Fabric
   url: 'api/products'
 
 
-
-
-  model: App.Models.Fabric
-
-
-class App.Collections.Favorites extends Backbone.Collection
-
+class App.Collections.Favorites extends App.Collections.Fabrics
   url: 'api/favorites'
 
-  model: App.Models.Fabric
-
-class App.Collections.Tag extends Backbone.Collection
+class App.Collections.TaggedWith extends App.Collections.Fabrics
 
   initialize: (options) ->
     @tag = options.tag
@@ -22,5 +14,4 @@ class App.Collections.Tag extends Backbone.Collection
   url: ->
    "/api/tags/" + @tag
 
-  model: App.Models.Fabric
 

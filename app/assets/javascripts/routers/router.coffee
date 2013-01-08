@@ -8,11 +8,11 @@ class App.Router extends Backbone.Router
   initialize: ->
     window.fabrics = new App.Collections.Fabrics()
     window.favorites = new App.Collections.Favorites()
-    window.tag = new App.Collections.Tag(tag: "floral")
+    window.taggedWith = new App.Collections.TaggedWith(tag: "floral")
 
     @favorites = window.favorites
     @fabrics = window.fabrics
-    @tag = window.tag
+    @taggedWith = window.taggedWith
 
   index: ->
     @fabrics.fetch
@@ -26,7 +26,7 @@ class App.Router extends Backbone.Router
         view = new App.Views.FavoritesGallery(collection: @fabrics, favorites: @favorites)
 
   tag: (tag) ->
-    @tag.tag = tag
-    @tag.fetch
+    @taggedWith.tag = tag
+    @taggedWith.fetch
       success: ->
-        view = new App.Views.TagsGallery(collection: @tag, tag: tag)
+        view = new App.Views.TagsGallery(collection: @taggedWith, tag: tag)
