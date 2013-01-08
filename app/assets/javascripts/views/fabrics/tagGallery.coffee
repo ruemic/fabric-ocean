@@ -6,15 +6,17 @@ class App.Views.TagsGallery extends Backbone.View
 
   initialize: (options) ->
     @tag = options.tag
-    console.log "view", @tag
     @fabrics = options.collection
     @fabrics.on 'reset', @render
+    @fabrics.on( 'add', @addOne, @)
     @fabrics.fetch()
 
   render: =>
     @$el.empty()
-    @fabrics.each (fabric) ->
-      view = new App.Views.FabricGalleryItem(model: fabric.toJSON())
-      $('#container').append(view.render())
+    @fabrics.each( @addOne.bind(@) )
+
+  addOne: (fabric) ->
+    view = new App.Views.FabricGalleryItem(model: fabric)
+    $('#container').append(view.render())
     $('a[rel*=facebox]').facebox()
 

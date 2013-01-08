@@ -9,12 +9,22 @@ class App.Views.FavoritesGallery extends Backbone.View
     @favorites = options.favorites
     @favorites.on 'reset', @render
     @favorites.fetch()
+    @favorites.on('add', @addOne, @)
 
   render: =>
+    $('a[rel*=facebox]').facebox()
     @favorites.each (favorite) ->
       id = favorite.get('product_id')
       fabric = @fabrics.get(id)
-      view = new App.Views.FabricGalleryItem(model: fabric.toJSON())
-      $('#container').append(view.render())
-    $('a[rel*=facebox]').facebox()
+      #TODO add validation
+      if fabric
+        view = new App.Views.FabricGalleryItem(model: fabric)
+        $('#container').append(view.render())
+      else
+        console.log "fabric is", fabric
+
+  addOne: (fabric) ->
+    view = new App.Views.FabricGalleryItem(model: fabric)
+    $('#container').append(view.render())
+
 

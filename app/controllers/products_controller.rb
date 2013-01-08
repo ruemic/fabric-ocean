@@ -8,9 +8,12 @@ class ProductsController < ApplicationController
     @favorites = current_user.favorites
     if params[:tag]
       @header_name = params[:tag].titleize
-      @products = Product.tagged_with(params[:tag]).page(params[:page]).per_page(20)
+      @all_products = Product.tagged_with(params[:tag])
+      # @products = Product.tagged_with(params[:tag]).page(params[:page]).per_page(20)
     else
       @header_name = "All"
+      # @products = Product.order("id").page(params[:page]).per_page(20)
+      @all_products = Product.order("id")
       @products = Product.order("id").page(params[:page]).per_page(20)
     end
   end

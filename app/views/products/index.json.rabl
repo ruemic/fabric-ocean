@@ -1,4 +1,4 @@
-collection @products
+collection @all_products
 
 attributes :id, :name, :image_url, :tag_list
 

@@ -7,4 +7,5 @@ class App.Views.FabricGalleryItem extends Backbone.View
     @model = @options.model
 
   render: ->
-    @$el.html(@template(fabric: @model))
+    @$el.html(@template(fabric: @model.toJSON()))
+
