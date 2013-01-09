@@ -4,6 +4,7 @@ class App.Router extends Backbone.Router
     'home'       : 'index'
     'favorites'  : 'favorites'
     'tag/:tag'   : 'tag'
+    'admin'      : 'admin'
 
 
   initialize: ->
@@ -35,3 +36,10 @@ class App.Router extends Backbone.Router
       success: ->
         view = new App.Views.TagsGallery
           collection: @taggedWith
+
+  admin: ->
+    @fabrics.fetch
+      success: ->
+        view = new App.Views.AdminGallery
+          collection: @fabrics
+        view.render()
