@@ -27,3 +27,5 @@ class App.Views.Tagger extends Backbone.View
     else
       current_tags.push @tag
       console.log "w new tag", current_tags
+      #TODO should update UI on save
+      model.save()
