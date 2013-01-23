@@ -12,7 +12,7 @@ gem 'pg'
 gem 'thin'
 gem 'eventmachine', '~> 1.0.0.beta.4.1'
 
-
+gem "pry-plus"
 
 
 # Gems used only for assets and not required

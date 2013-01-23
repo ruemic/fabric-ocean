@@ -12,7 +12,6 @@ class App.Views.FavoritesGallery extends Backbone.View
     @favorites.on('add', @addOne, @)
 
   render: =>
-    $('a[rel*=facebox]').facebox()
     @favorites.each (favorite) ->
       id = favorite.get('product_id')
       fabric = @fabrics.get(id)

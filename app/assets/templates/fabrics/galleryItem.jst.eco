@@ -2,6 +2,6 @@
 <p>name: <%= @fabric.name %></p>
 <p class="tagged-with">tags: <span><%= @fabric.tag_list %></span></p>
 
-<a href="javascript:" rel="facebox" class="product-thumbnail">
+<a href="javascript:" class="product-thumbnail">
   <img src="<%= @fabric.image_url_thumb %>">
 </a>

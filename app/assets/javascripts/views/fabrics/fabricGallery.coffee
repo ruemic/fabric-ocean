@@ -12,4 +12,3 @@ class App.Views.FabricGallery extends Backbone.View
     @collection.each (fabric) ->
       view = new App.Views.FabricGalleryItem(model: fabric)
       $("#container").append(view.render())
-    $('a[rel*=facebox]').facebox()

@@ -18,5 +18,4 @@ class App.Views.TagsGallery extends Backbone.View
   addOne: (fabric) ->
     view = new App.Views.FabricGalleryItem(model: fabric)
     $('#container').append(view.render())
-    $('a[rel*=facebox]').facebox()
 
