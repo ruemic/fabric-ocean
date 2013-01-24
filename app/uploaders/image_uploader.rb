@@ -7,9 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include Sprockets::Helpers::RailsHelper
   include Sprockets::Helpers::IsolatedHelper
 
-  Rails.env.production?
-    storage :fog
-
+  storage :fog
   Rails.env.development?
     storage :file
 
