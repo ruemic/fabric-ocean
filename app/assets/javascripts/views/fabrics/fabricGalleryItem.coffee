@@ -4,12 +4,17 @@ class App.Views.FabricGalleryItem extends Backbone.View
   className: "galleryItem"
 
   events:
-    'click' : "onFabricClick"
+    "click" : "onFabricClick"
+    "change input": "addTags"
 
   initialize: ->
     @model = @options.model
     @model.on("change:tag_list", @updateTags, @)
     @eventTracker = App.get('eventTracker')
+
+  addTags: =>
+    newTag = @.$("input").val()
+    @model.addTag(newTag)
 
   render: ->
     @$el.html(@template(fabric: @model.toJSON()))
