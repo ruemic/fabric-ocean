@@ -1,10 +1,14 @@
 Gallery::Application.routes.draw do
 
-  root to: "products#index"
+  root to: "main#index"
+
+  # root to: "products#index"
 
   get "signup" => "users#new", as: "signup"
   get "logout" => "sessions#destroy", as: "logout"
   get "login" => "sessions#new", as: "login"
+
+  get "old" => "products#index"
 
   get "tags/:tag", to: "products#index", as: :tag
   match '/users/favorites', :controller => 'users', :action => 'favorites'
@@ -13,7 +17,12 @@ Gallery::Application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :products
   resources :favorites
+
+  scope "api" do
+    get "tags/:tag", to: "products#index", as: :tag
+    resources :products
+    resources :favorites
+  end
 
 end

@@ -1,5 +1,7 @@
 
 #tag_cloud {
+  top: 20px;
+  position: absolute;
   padding: 20px;
   background: transparentize(#eee,.9);
   margin: 20px 20px;
@@ -12,7 +14,7 @@
   @include clearfix;
 }
 
-.product {
+.galleryItem {
   width: 321px;
   min-height: 243px;
   float: left;
@@ -46,7 +48,8 @@
     }
   }
 }
-.product.favorited {
+
+.galleryItem.favorited {
   > a > img {
     @include box-shadow(0 0 1px 4px #FFDB6B);
     @include transition(box-shadow, .26s);

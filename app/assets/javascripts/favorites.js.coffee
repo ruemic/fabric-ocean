@@ -5,39 +5,39 @@
 
 
 
-$ ->
-  $(".favorite").draggable()
+# $ ->
+#   $(".favorite").draggable()
 
 
-  $("#drag-hint").delay(4000).fadeOut('slow')
+#   $("#drag-hint").delay(4000).fadeOut('slow')
 
-  bigStar = $("#nav-fav-star")
-  favIt = $(".fav-it")
-  unFavIt = $(".un-fav-it")
-  destroy = $(".destroy")
+#   bigStar = $("#nav-fav-star")
+#   favIt = $(".fav-it")
+#   unFavIt = $(".un-fav-it")
+#   destroy = $(".destroy")
 
-  favIt.live "click", ->
-    bigStar.css
-      color: "#EEEABB"
-    $(@).find('form').submit()
+#   favIt.live "click", ->
+#     bigStar.css
+#       color: "#EEEABB"
+#     $(@).find('form').submit()
 
-  unFavIt.live "click", ->
-    $(@).find('form').submit()
-    bigStar.css
-      color: "#0E3850;"
+#   unFavIt.live "click", ->
+#     $(@).find('form').submit()
+#     bigStar.css
+#       color: "#0E3850;"
 
-  destroy.live "click", ->
-    $(@).parents('form').submit()
+#   destroy.live "click", ->
+#     $(@).parents('form').submit()
 
-  $(".favorite form").live "ajax:success", ->
-    $(@).parents('.favorite').remove()
+#   $(".favorite form").live "ajax:success", ->
+#     $(@).parents('.favorite').remove()
 
 
 
-  favIt.live "ajax:success", ->
-    $(@).parents('.product').addClass('favorited')
+#   favIt.live "ajax:success", ->
+#     $(@).parents('.product').addClass('favorited')
 
-  unFavIt.live "ajax:success", ->
-    $(@).parents('.product').removeClass('favorited')
+#   unFavIt.live "ajax:success", ->
+#     $(@).parents('.product').removeClass('favorited')
 
 

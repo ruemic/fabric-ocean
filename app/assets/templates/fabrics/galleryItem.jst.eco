@@ -1,0 +1,7 @@
+<p class="id">id: <span><%= @fabric.id %></span></p>
+<p>name: <%= @fabric.name %></p>
+<p class="tagged-with">tags: <span><%= @fabric.tag_list %></span></p>
+
+<a href="javascript:" class="product-thumbnail">
+  <img src="<%= @fabric.image_url_thumb %>">
+</a>

@@ -1,0 +1,9 @@
+<div id="container"></div>
+
+<div id="tag_cloud">
+  <% tag_cloud Product.tag_counts, %w[s m l] do |tag, css_class| %>
+    <a href="/#tag/<%= tag.name %>" class="<%= css_class %>">
+      <%= tag.name %>
+    </a>
+  <% end %>
+</div>

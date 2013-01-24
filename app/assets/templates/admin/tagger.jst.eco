@@ -1,0 +1,5 @@
+<p>enter tag here</p>
+<input type="text"></input>
+
+<button class="start"> Start Tagging</button>
+<button clss"save"> Save</button>
