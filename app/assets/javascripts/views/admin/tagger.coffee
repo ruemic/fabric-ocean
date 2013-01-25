@@ -10,23 +10,23 @@ class App.Views.Tagger extends Backbone.View
 
   initialize: (options) ->
     @model = options.model
-    # @.listenTo(@model, "change:active", @toggleState)
+    @.listenTo(@model, "change:active", @toggleActiveState)
 
   render: =>
     @$el.html(@template())
     $("#wrapper").append(@$el)
 
   start: =>
-    @model.set(active: true)
-    @model.set(tag: @.$("input").val())
-    console.log @model.get('tag')
+    new_tag = @.$("input").val()
+    unless new_tag is ""
+      @model.set(active: true)
+      @model.set(tag: new_tag)
 
   stop: =>
-    console.log "stop"
     @model.set(active: false)
 
-  toggleState: ->
+  toggleActiveState: ->
     if @model.get('active') is true
-      console.log "active"
+      @$el.addClass("active")
     else
-      console.log "not active"
+      @$el.removeClass("active")
