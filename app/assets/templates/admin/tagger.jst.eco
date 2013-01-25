@@ -1,3 +1,4 @@
 <p>enter tag here</p>
 <input type="text"></input>
 <button class="start"> Start Tagging</button>
+<button class="stop"> Stop Tagging</button>

@@ -5,24 +5,28 @@ class App.Views.Tagger extends Backbone.View
   id: "tagger"
 
   events:
-    "click .start": "start"
+    "click .start"  : "start"
+    "click .stop"   : "stop"
 
   initialize: (options) ->
-    @tag = ""
-    @fabrics = options.collection
-    @eventTracker = App.get('eventTracker')
-    @eventTracker.on "modelClicked", @tagFabric, @
+    @model = options.model
+    # @.listenTo(@model, "change:active", @toggleState)
 
   render: =>
     @$el.html(@template())
     $("#wrapper").append(@$el)
 
   start: =>
-    @tag = @.$("input").val()
+    @model.set(active: true)
+    @model.set(tag: @.$("input").val())
+    console.log @model.get('tag')
 
-  tagFabric: (model) ->
-    current_tags = model.get('tag_list')
-    unless current_tags.indexOf(@tag) > -1
-      new_tags = current_tags + "," + @tag
-      model.set(tag_list: new_tags)
-      model.save()
+  stop: =>
+    console.log "stop"
+    @model.set(active: false)
+
+  toggleState: ->
+    if @model.get('active') is true
+      console.log "active"
+    else
+      console.log "not active"

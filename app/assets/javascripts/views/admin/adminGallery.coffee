@@ -13,5 +13,6 @@ class App.Views.AdminGallery extends Backbone.View
       view = new App.Views.AdminGalleryItem(model: fabric)
       $("#container").append(view.render())
 
-    tagger = new App.Views.Tagger(collection: @fabrics)
-    tagger.render()
+    taggerModel = new App.Models.Tagger()
+    taggerView = new App.Views.Tagger(collection: @fabrics, model: taggerModel)
+    taggerView.render()
