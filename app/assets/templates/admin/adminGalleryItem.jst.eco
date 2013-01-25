@@ -1,3 +1,4 @@
+<input class="tags-input" tabindex="1" type="text-area" value="<%= @fabric.tag_list %>"></input>
 
 <a href="javascript:" class="product-thumbnail">
   <img src="<%= @fabric.image_url_thumb %>">

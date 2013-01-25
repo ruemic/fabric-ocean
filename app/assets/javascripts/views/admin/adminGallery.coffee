@@ -10,7 +10,7 @@ class App.Views.AdminGallery extends Backbone.View
   render: =>
     @$el.empty()
     @fabrics.each (fabric) ->
-      view = new App.Views.FabricGalleryItem(model: fabric)
+      view = new App.Views.AdminGalleryItem(model: fabric)
       $("#container").append(view.render())
 
     tagger = new App.Views.Tagger(collection: @fabrics)

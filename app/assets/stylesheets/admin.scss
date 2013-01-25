@@ -1,7 +1,16 @@
 #tagger {
-  width: 140px;
+  width: 200px;
   position: fixed;
   top: 100px;
-  background: #ccc;
+  background: transparentize(black,.3);
   padding: 2px;
+  text-align: center;
+  p { color: white;}
+  input { font-size: 1.3em;}
+  button { font-size: 22px;}
+}
+
+.tags-input {
+  width: 100%;
+  font-size: 1.9em;
 }
