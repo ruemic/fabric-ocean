@@ -23,6 +23,6 @@ class App.Views.Tagger extends Backbone.View
   tagFabric: (model) ->
     current_tags = model.get('tag_list')
     unless current_tags.indexOf(@tag) > -1
-      current_tags.push @tag
-      #TODO should update UI on save
+      new_tags = current_tags + "," + @tag
+      model.set(tag_list: new_tags)
       model.save()

@@ -20,6 +20,7 @@ class App.Views.AdminGalleryItem extends Backbone.View
     @$el.html(@template(fabric: @model.toJSON()))
 
   updateTags: ->
+    @.$("input").val(@model.get('tag_list'))
     @.$("input").addClass("saved")
     setTimeout( @transparentizeBorder, 300)
 
