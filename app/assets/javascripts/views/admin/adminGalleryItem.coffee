@@ -5,22 +5,26 @@ class App.Views.AdminGalleryItem extends Backbone.View
 
   events:
     "click" : "onFabricClick"
-    "change input": "addTags"
+    "change input": "editTags"
 
   initialize: ->
     @model = @options.model
-    @model.on("change:tag_list", @updateTags, @)
     @eventTracker = App.get('eventTracker')
+    @model.on("change:tag_list", @updateTags, @)
 
-  addTags: =>
-    newTag = @.$("input").val()
-    @model.addTag(newTag)
+  editTags: =>
+    @model.set tag_list: @.$("input").val()
+    @model.save()
 
   render: ->
     @$el.html(@template(fabric: @model.toJSON()))
 
   updateTags: ->
-    @.$('.tagged-with span').html(@model.get('tag_list'))
+    @.$("input").addClass("saved")
+    setTimeout( @transparentizeBorder, 300)
+
+  transparentizeBorder: ->
+    @.$("input").removeClass('saved')
 
   onFabricClick: ->
     console.log "event tracker"

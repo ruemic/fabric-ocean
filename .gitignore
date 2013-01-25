@@ -17,4 +17,4 @@
 
 /public
 /app/assets/images/swatches
-/app/uploaders/image_uploader.rb
+/app/uploaders/
